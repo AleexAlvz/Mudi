@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Inicio</title>
+</head>
+<body>
+	
+	<div th:each="pedido : ${pedidos}">
+	
+		<div th:text="${pedido.nomeProduto}">Nome do produto</div>
+		<div>Valor: <span th:text="${pedido.valorNegociado}">200,99</span></div>
+		<div>Data da entrega: <span th:text="${pedido.dataEntrega}">20/03/2021</span></div>
+		<br>
+		<div>Produto</div>
+		<div> <input th:value="${pedido.UrlProduto}" value="Url do produto"/></div>
+		<br>
+		<div>Descrição</div>
+		<div>
+			<textarea th:text="${pedido.descricao}">Descrição do produto</textarea>
+		</div>
+		
+		<div>
+			<img th:src="${pedido.UrlImagem}" src="">
+		</div>
+		
+	</div>
+	
+	
+</body>
+</html>
