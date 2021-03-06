@@ -2,28 +2,37 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 <title>Inicio</title>
 </head>
 <body>
-	
-	<div th:each="pedido : ${pedidos}">
-	
-		<div th:text="${pedido.nomeProduto}">Nome do produto</div>
-		<div>Valor: <span th:text="${pedido.valorNegociado}">200,99</span></div>
-		<div>Data da entrega: <span th:text="${pedido.dataEntrega}">20/03/2021</span></div>
-		<br>
-		<div>Produto</div>
-		<div> <input th:value="${pedido.UrlProduto}" value="Url do produto"/></div>
-		<br>
-		<div>Descrição</div>
-		<div>
-			<textarea th:text="${pedido.descricao}">Descrição do produto</textarea>
+	<div class="container">
+		<div class="card" th:each="pedido : ${pedidos}">
+			<div class="card-header" th:text="${pedido.nomeProduto}">Nome do produto</div>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-12 col-sm-8 mb-3">
+						<div class="row">
+							<div class="col-md-5">Valor: <span th:text="${pedido.valorNegociado}">200,99</span></div>
+							<div class="col-md-7">Data da entrega: <span th:text="${pedido.dataEntrega}">20/03/2021</span></div>
+						</div>
+						<div>Produto</div>
+						<div> <input class="form-control" th:value="${pedido.UrlProduto}" value="Url do produto"/></div>
+						<br>
+						<div>Descrição</div>
+						<div>
+							<textarea class="form-control" th:text="${pedido.descricao}">Descrição do produto</textarea>
+						</div>
+					</div>
+					
+					<div class="col-12 col-sm-4">
+						<div>
+							<img class="img-thumbnail" th:src="${pedido.UrlImagem}" src="">
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		
-		<div>
-			<img th:src="${pedido.UrlImagem}" src="">
-		</div>
-		
 	</div>
 	
 	
