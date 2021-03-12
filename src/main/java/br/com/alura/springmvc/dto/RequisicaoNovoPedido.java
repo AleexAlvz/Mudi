@@ -3,6 +3,7 @@ package br.com.alura.springmvc.dto;
 import javax.validation.constraints.NotBlank;
 
 import br.com.alura.springmvc.model.Pedido;
+import br.com.alura.springmvc.model.StatusPedido;
 public class RequisicaoNovoPedido {
 	
 	@NotBlank
@@ -44,6 +45,7 @@ public class RequisicaoNovoPedido {
 		pedido.setNomeProduto(nomeProduto);
 		pedido.setUrlImagem(urlImagem);
 		pedido.setUrlProduto(urlProduto);
+		pedido.setStatus(StatusPedido.AGUARDANDO);
 		return pedido;
 	}
 

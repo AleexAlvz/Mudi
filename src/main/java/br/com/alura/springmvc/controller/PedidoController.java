@@ -1,11 +1,13 @@
 package br.com.alura.springmvc.controller;
 import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import br.com.alura.springmvc.dto.RequisicaoNovoPedido;
 import br.com.alura.springmvc.model.Pedido;
 import br.com.alura.springmvc.repository.PedidoRepository;
@@ -26,11 +28,12 @@ public class PedidoController {
 	public String novo(@Valid RequisicaoNovoPedido requisicao, BindingResult result) {
 		
 		Pedido pedido = requisicao.toPedido();
-		if(!((pedido.getNomeProduto().isBlank())||(pedido.getUrlImagem().isBlank())||(pedido.getUrlProduto().isBlank()))== true) {
-			pedidoRepository.save(pedido);	
+		if(result.hasErrors()) {
+			return "pedido/formulario";
 		}
 		
-		return "pedido/formulario";
+		pedidoRepository.save(pedido);	
+		return "redirect:/home";
 		
 	}
 }
