@@ -26,7 +26,9 @@ public class PedidoController {
 	public String novo(@Valid RequisicaoNovoPedido requisicao, BindingResult result) {
 		
 		Pedido pedido = requisicao.toPedido();
-		pedidoRepository.save(pedido);
+		if(!((pedido.getNomeProduto().isBlank())||(pedido.getUrlImagem().isBlank())||(pedido.getUrlProduto().isBlank()))== true) {
+			pedidoRepository.save(pedido);	
+		}
 		
 		return "pedido/formulario";
 		
