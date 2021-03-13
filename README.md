@@ -14,12 +14,10 @@ Tecnologias utilizadas durante o curso:
 -Mysql Database
 </h4>
 
-# Documentação:
-
 # Configurações
 ----------------------------------------------------------------------------------------------------------
-O banco de dados utilizado no projeto foi o MySQL. Para usufruir do projeto corretamente, utilize o script
-a seguir para gerar o banco de dados e as tabelas padrões:
+<h2>O banco de dados utilizado no projeto foi o MySQL. Para usufruir do projeto corretamente, utilize o script
+a seguir para gerar o banco de dados e as tabelas padrões:</h2>
 ----------------------------------------------------------------------------------------------------------
 <h4>
 create database springmvc;
@@ -36,6 +34,7 @@ create table authorities (
     authority varchar(50) not null,
     constraint fk_authorities_users foreign key(username) references users(username)
 );
+
 create unique index ix_auth_username on authorities (username,authority);
 </h4>
 ----------------------------------------------------------------------------------------------------------
