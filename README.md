@@ -1,13 +1,38 @@
-# SpringMVC
-Curso SpringMVC Alura
+# Spring Framework
+Curso de Spring Framework oferecido pela Alura
 
-Projeto produzido durante o "curso Spring MVC: Crie um web app com Thymeleaf e Bootstrap"
-Ao longo do curso adquiri diversos conhecimentos, como por exemplo inciar projetos com Spring e fazer conexão com banco de dados via Spring Data JPA, entre outros.
-Além disso, este foi o primeiro projeto ao qual trouxe o versionamento do git mais a sério, aperfeiçoando meus conhecimentos sobre o mesmo.
+Projeto produzido durante os cursos 
+"Spring MVC: Crie um web app com Thymeleaf e Bootstrap"
+"Spring MVC: Autenticação com Spring Security, API Rest e AJAX"
 
 Tecnologias utilizadas durante o curso:
--Spring MVC
--Spring Data JPA
+-Spring Framework
+-Thymeleaf
 -Bootstrap
--HTML
+-HTML e CSS
 -Mysql Database
+
+Documentação:
+
+Manual de instalação
+
+MySQL
+O banco de dados utilizado no projeto foi o Mysql. Para usufruir do projeto corretamente, utilize o script
+a seguir para gerar o banco de dados e as tabelas padrões:
+----------------------------------------------------------------------------------------------------------
+create database springmvc;
+use springmvc;
+
+create table users(
+    username varchar(50) not null primary key,
+    password varchar(500) not null,
+    enabled boolean not null
+);
+
+create table authorities (
+    username varchar(50) not null,
+    authority varchar(50) not null,
+    constraint fk_authorities_users foreign key(username) references users(username)
+);
+create unique index ix_auth_username on authorities (username,authority);
+----------------------------------------------------------------------------------------------------------
