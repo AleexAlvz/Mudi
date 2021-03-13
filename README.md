@@ -21,6 +21,7 @@ Configurações
 O banco de dados utilizado no projeto foi o MySQL. Para usufruir do projeto corretamente, utilize o script
 a seguir para gerar o banco de dados e as tabelas padrões:
 ----------------------------------------------------------------------------------------------------------
+<h4>
 create database springmvc;
 use springmvc;
 
@@ -36,4 +37,5 @@ create table authorities (
     constraint fk_authorities_users foreign key(username) references users(username)
 );
 create unique index ix_auth_username on authorities (username,authority);
+</h4>
 ----------------------------------------------------------------------------------------------------------
