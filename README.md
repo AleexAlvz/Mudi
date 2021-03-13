@@ -1,4 +1,5 @@
 # Spring Framework
+<h4>
 Curso de Spring Framework oferecido pela Alura
 
 Projeto produzido durante os cursos 
@@ -11,12 +12,11 @@ Tecnologias utilizadas durante o curso:
 -Bootstrap
 -HTML e CSS
 -Mysql Database
+</h4>
 
-Documentação:
+# Documentação:
 
-Manual de instalação
-
-Configurações
+# Configurações
 ----------------------------------------------------------------------------------------------------------
 O banco de dados utilizado no projeto foi o MySQL. Para usufruir do projeto corretamente, utilize o script
 a seguir para gerar o banco de dados e as tabelas padrões:
