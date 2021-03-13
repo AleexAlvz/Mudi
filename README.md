@@ -16,8 +16,9 @@ Documentação:
 
 Manual de instalação
 
-MySQL
-O banco de dados utilizado no projeto foi o Mysql. Para usufruir do projeto corretamente, utilize o script
+Configurações
+----------------------------------------------------------------------------------------------------------
+O banco de dados utilizado no projeto foi o MySQL. Para usufruir do projeto corretamente, utilize o script
 a seguir para gerar o banco de dados e as tabelas padrões:
 ----------------------------------------------------------------------------------------------------------
 create database springmvc;
