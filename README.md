@@ -17,6 +17,7 @@ Tecnologias utilizadas durante o curso:</br>
 -Bootstrap</br>
 -HTML e CSS</br>
 -Mysql Database</br>
+-Vue.js</br>
 </h4>
 
 # Configurações
