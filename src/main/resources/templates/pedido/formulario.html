@@ -44,7 +44,7 @@
 						<textarea th:field="*{descricao}" class="form-control" placeholder="Adicione detalhes importantes para ajudar o comprador."></textarea>
 					</div>
 
-					<a class="btn btn-secondary mt-3" href="/home">Voltar</a>
+					<a class="btn btn-secondary mt-3" th:href="@{/usuario/pedido}">Voltar</a>
 					<button class="btn btn-primary mt-3" type="submit">Cadastrar</button>
 				</form>
 			</div>
