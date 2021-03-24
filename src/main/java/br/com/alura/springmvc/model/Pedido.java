@@ -2,7 +2,9 @@ package br.com.alura.springmvc.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -11,10 +13,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Pedido {
 
+	public List<Oferta> getOferta() {
+		return oferta;
+	}
+	public void setOferta(List<Oferta> oferta) {
+		this.oferta = oferta;
+	}
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nomeProduto;
@@ -29,6 +41,9 @@ public class Pedido {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	private User user;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "pedido", fetch = FetchType.LAZY)
+	private List<Oferta> oferta;
 	
 	public User getUser() {
 		return user;
